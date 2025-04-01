@@ -170,7 +170,7 @@ nav a:hover {
 .hero-section p {
     font-size: 1.2em;
     margin-bottom: 30px;
-    max-width: 600px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -184,28 +184,72 @@ nav a:hover {
 /* Stats section styles */
 .stats-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin: 50px 0;
-    text-align: center;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(8px, 1.2vw, 25px);
+    /* padding: clamp(20px, 3vw, 35px) 0; */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stats-section.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .stats-section div {
-    padding: 25px;
-    background: white;
+    padding: clamp(6px, 1vw, 12px);
+    /* background: white; */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 0; /* Prevents grid item from growing beyond container */
 }
+
+.stats-section.animate div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stats-section div:nth-child(1) { transition-delay: 0.05s; }
+.stats-section div:nth-child(2) { transition-delay: 0.1s; }
+.stats-section div:nth-child(3) { transition-delay: 0.15s; }
+.stats-section div:nth-child(4) { transition-delay: 0.2s; }
+.stats-section div:nth-child(5) { transition-delay: 0.25s; }
 
 .stats-section div:hover {
     transform: translateY(-5px);
+    transition: transform 0.2s ease;
 }
 
 .stat-number {
-    font-size: 2.5em;
+    font-size: clamp(1.2rem, 3vw, 2rem);
     color: #e67e22;
-    margin-bottom: 10px;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stats-section div p {
+    font-size: clamp(0.75rem, 1.4vw, 0.9rem);
+    margin: 0.5em 0 0;
+    line-height: 1.2;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.stats-section div:hover .stat-number {
+    transform: scale(1.1);
+    /* transition: transform 0.5s ease; */
 }
 
 /* Value proposition section styles */
@@ -213,9 +257,9 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin: 50px 0;
-    background: #f9f9f9;
-    padding: 50px 0;
+    /* margin: 50px 0; */
+    /* background: #cccccc center/cover no-repeat; */
+    /* padding: 50px 0; */
 }
 
 .value-prop-section div {
@@ -235,7 +279,7 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin: 50px 0;
+    /* margin: 50px 0; */
 }
 
 .services-section div {
@@ -259,7 +303,7 @@ nav a:hover {
 /* Recognition section styles */
 .recognition-section {
     text-align: center;
-    margin: 50px 0;
+    /* margin: 50px 0; */
     padding: 50px 0;
     background: #f9f9f9;
 }
