@@ -26,7 +26,7 @@ header {
 
 header.scrolled {
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 15px rgba(255,255,255,0.3);
+    box-shadow: 0 2px 15px rgba(87, 83, 114, 0.5);
     backdrop-filter: blur(10px);
 }
 
@@ -77,7 +77,40 @@ header .container {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: clamp(20px, 3vw, 40px);
+}
+
+/* Responsive header adjustments */
+@media (max-width: 768px) {
+    .header-right {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        /* gap: clamp(15px, 3vw, 25px); */
+    }
+    
+    /* .header-btn {
+        padding: 8px 20px;
+    } */
+    
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.header-btn {
+    background-color: #18263B;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    font-size: clamp(0.7em, 2vw, 1em);
+    /* border: 3px solid #ffffff; */
 }
 
 /* Navigation styles */
@@ -93,8 +126,9 @@ nav a {
     text-decoration: none;
     color: white;
     font-weight: 500;
-    font-size: 0.95em;
-    transition: all 0.3s ease;
+    /* font-size: 0.95em; */
+    font-size: clamp(0.7em, 2vw, 1em);
+    /* transition: all 0.3s ease; */
     position: relative;
 }
 
@@ -117,8 +151,8 @@ nav a:hover::after {
 .btn {
     padding: 12px 25px;
     border-radius: 5px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    /* font-weight: 600; */
+    
     display: inline-block;
     text-decoration: none;
 }
@@ -127,6 +161,8 @@ nav a:hover::after {
     background-color: #18263B;
     color: white;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    /* transition: all 0.3s ease; */
+    font-weight: 600;
     /* border: 3px solid #ffffff; */
 }
 
@@ -134,11 +170,14 @@ nav a:hover::after {
     background-color: #18263B;
     color: white;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    /* transition: all 0.3s ease; */
+    font-weight: 600;
 }
 
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
 }
 
 /* Hero section styles */
@@ -189,8 +228,8 @@ nav a:hover::after {
 .stats-section {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: clamp(8px, 1.2vw, 25px);
-    /* padding: clamp(20px, 3vw, 35px) 0; */
+    gap: clamp(8px, 1vw, 20px);
+    padding: clamp(15px, 2vw, 25px) 0;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.5s ease;
@@ -205,18 +244,17 @@ nav a:hover::after {
 }
 
 .stats-section div {
-    /* padding: clamp(6px, 1vw, 12px); */
-    /* background: white; */
+    padding: clamp(10px, 1.5vw, 15px);
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+    box-shadow: 0 5px 15px rgba(122, 122, 122, 0.2);
     opacity: 0;
     transform: translateY(20px);
-    aspect-ratio: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    min-width: 0; /* Prevents grid item from growing beyond container */
+    min-width: 50;
 }
 
 .stats-section.animate div {
@@ -236,16 +274,17 @@ nav a:hover::after {
 } */
 
 .stat-number {
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: clamp(0.8rem, 2.5vw, 1.8rem);
     color: #18263B;
     margin: 0;
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.2;
+    text-align: center;
 }
 
 .stats-section div p {
-    font-size: clamp(0.75rem, 1.4vw, 0.9rem);
-    margin: 0.5em 0 0;
+    font-size: clamp(0.5rem, 1.2vw, 1rem);
+    margin: 0.3em 0 0;
     line-height: 1.2;
     word-wrap: break-word;
     text-align: center;
