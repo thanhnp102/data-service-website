@@ -26,16 +26,24 @@ header {
 
 header.scrolled {
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 15px rgba(255,255,255,0.3);
     backdrop-filter: blur(10px);
 }
 
+header.scrolled .logo-img {
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
 header.scrolled .logo h1 {
-    color: #1a1a1a;
+    color: #18263B;
 }
 
 header.scrolled nav a {
-    color: #444;
+    color: #18263B;
+}
+
+header.scrolled nav a::after{
+    background-color: #18263B;
 }
 
 header .container {
@@ -55,6 +63,7 @@ header .container {
     width: 45px;
     height: 45px;
     object-fit: contain;
+    /* box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3); */
 }
 
 .logo h1 {
@@ -96,20 +105,12 @@ nav a::after {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #e67e22;
+    background-color: white;
     transition: width 0.3s ease;
-}
-
-nav a:hover {
-    color: #e67e22;
 }
 
 nav a:hover::after {
     width: 100%;
-}
-
-nav a:hover {
-    color: #e67e22;
 }
 
 /* Button styles */
@@ -123,25 +124,28 @@ nav a:hover {
 }
 
 .btn-primary {
-    background-color: #e67e22;
+    background-color: #18263B;
     color: white;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    /* border: 3px solid #ffffff; */
 }
 
 .btn-secondary {
-    background-color: #e67e22;
+    background-color: #18263B;
     color: white;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(230,126,34,0.3);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.8);
 }
 
 /* Hero section styles */
 .hero-section {
     position: relative;
-    background: url('images/Business-la-gi.jpg') center/cover no-repeat;
-    padding: 180px 0 120px;
+    background: url('images/back-ground.jpeg') center/cover no-repeat;
+    padding: 200px 0 120px;
     text-align: center;
     margin-top: 0;
     color: white;
@@ -164,7 +168,7 @@ nav a:hover {
 .hero-section h1 {
     font-size: 3.5em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 .hero-section p {
@@ -201,10 +205,10 @@ nav a:hover {
 }
 
 .stats-section div {
-    padding: clamp(6px, 1vw, 12px);
+    /* padding: clamp(6px, 1vw, 12px); */
     /* background: white; */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
     opacity: 0;
     transform: translateY(20px);
     aspect-ratio: 1;
@@ -226,14 +230,14 @@ nav a:hover {
 .stats-section div:nth-child(4) { transition-delay: 0.2s; }
 .stats-section div:nth-child(5) { transition-delay: 0.25s; }
 
-.stats-section div:hover {
+/* .stats-section div:hover {
     transform: translateY(-5px);
     transition: transform 0.2s ease;
-}
+} */
 
 .stat-number {
     font-size: clamp(1.2rem, 3vw, 2rem);
-    color: #e67e22;
+    color: #18263B;
     margin: 0;
     font-weight: 700;
     line-height: 1;
@@ -247,10 +251,10 @@ nav a:hover {
     text-align: center;
 }
 
-.stats-section div:hover .stat-number {
-    transform: scale(1.1);
+/* .stats-section div:hover .stat-number {
+    transform: scale(1.1); */
     /* transition: transform 0.5s ease; */
-}
+/* } */
 
 /* Value proposition section styles */
 .value-prop-section {
@@ -266,7 +270,7 @@ nav a:hover {
     padding: 30px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
 }
 
 .value-prop-section h3 {
