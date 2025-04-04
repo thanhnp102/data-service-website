@@ -33,7 +33,7 @@ const statsObserver = new IntersectionObserver((entries) => {
             statNumbers.forEach(stat => {
                 const finalValue = parseInt(stat.innerHTML);
                 stat.innerHTML = '0';
-                animateValue(stat, 0, finalValue, 1000);
+                animateValue(stat, 0, finalValue, 500);
             });
             statsObserver.unobserve(entry.target);
         }
