@@ -209,7 +209,7 @@ nav a:hover::after {
 /* Hero section styles */
 .hero-section {
     position: relative;
-    background: url('images/back-ground.jpeg') center/cover no-repeat;
+    background: url('../../assets/images/back-ground.jpeg') center/cover no-repeat;
     padding: 200px 0 120px;
     text-align: center;
     margin-top: 0;
