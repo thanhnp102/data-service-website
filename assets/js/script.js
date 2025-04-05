@@ -54,3 +54,48 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.observe(statsSection);
     }
 });
+
+// Contact form handling
+function handleSubmit(event) {
+    event.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+    
+    // Basic validation
+    if (!name || !email || !phone || !message) {
+        alert('Please fill in all fields');
+        return false;
+    }
+    
+    if (!isValidEmail(email)) {
+        alert('Please enter a valid email address');
+        return false;
+    }
+    
+    if (!isValidPhone(phone)) {
+        alert('Please enter a valid phone number');
+        return false;
+    }
+
+    // In a real application, you would send this data to a server
+    // For now, we'll just show a success message
+    alert('Thank you for your message! We will get back to you soon.');
+    document.getElementById('contactForm').reset();
+    return false;
+}
+
+// Email validation
+function isValidEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}
+
+// Phone validation (basic)
+function isValidPhone(phone) {
+    const phonePattern = /^[\d\s\-\+\(\)]{8,}$/;
+    return phonePattern.test(phone);
+}
